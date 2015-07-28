@@ -1,4 +1,5 @@
 node_modules
+tmp
 .bash_history
 .bash_logout
 .bashrc
