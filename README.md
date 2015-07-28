@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **WELCOME TO KODING!**
 You've said goodbye to your localhost and are ready to develop software in the cloud!
 
@@ -41,3 +42,6 @@ For more questions and FAQs, head over to http://learn.koding.com or send us an 
 at support@koding.com
 
 Enjoy!
+=======
+# keonen.koding.io
+>>>>>>> 4312134b4955f04b5dbb9c70ba6227244f774db8
