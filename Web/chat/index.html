@@ -1,7 +1,15 @@
 <!doctype html>
 <html>
     <head>
-        <title>Testi</title>
+        <title>Battleship game</title>
+        <style>
+            body {
+              -webkit-user-select: none;
+                 -moz-user-select: -moz-none;
+                  -ms-user-select: none;
+                      user-select: none;
+            }
+        </style>
         <script src ="/socket.io/socket.io.js"></script>
         <script>
             window.onload = function(){
@@ -15,7 +23,7 @@
                 
             send_message.onclick = function(){
                 console.log(chat.value);
-                socket.emit('chatbot', {message:chat.value});
+                socket.emit('chatbot', {message:chat_name.value+": "+chat.value});
             }
                 socket.on('check chatmessage', function(data){
                     
@@ -26,9 +34,301 @@
         </script>
     </head>
     <body>
-        <h1><a href="https://en.wikipedia.org/wiki/Turing_test" target="_blank" style="text-decoration: none; color: black">Turing test</a></h1>
-        Your message: <input type="text" id="chat" size="50">
+        <center>
+<table border="0">
+<tr>
+<td>
+<table border="1">
+        <tr>
+			<td colspan="11" align="center"><b> Your ships </b></td>
+		</tr>
+		<td> </td><td align="center">A</td><td align="center">B</td><td align="center">C</td><td align="center">D</td><td align="center">E</td><td align="center">F</td><td align="center">G</td><td align="center">H</td><td align="center">I</td><td align="center">L</td>
+		</tr>
+		<tr>
+            <TD> &nbsp; 1  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 2  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 3  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 4  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 5  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 6  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 7  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 8  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 9  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD>10  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+        </table>
+</td>
+<td> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </td>
+<td>
+
+<table border="1">
+        <tr>
+			<td colspan="11" align="center"><b> Enemy ships </b></td>
+		</tr>
+		<td> </td><td align="center">A</td><td align="center">B</td><td align="center">C</td><td align="center">D</td><td align="center">E</td><td align="center">F</td><td align="center">G</td><td align="center">H</td><td align="center">I</td><td align="center">L</td>
+		</tr>
+		<tr>
+            <TD> &nbsp; 1  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 2  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 3  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 4  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 5  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 6  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 7  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 8  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD> &nbsp; 9  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+		<tr>
+            <TD>10  &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+            <TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+			<TD onClick="if(this.bgColor=='#ffffff'){this.bgColor='#00CC00'}else if(this.bgColor=='#00CC00'){this.bgColor='#ffff00'} else {this.bgColor='#ffffff'}" bgColor=#ffffff>&nbsp; &nbsp; &nbsp; </TD>
+        </tr>
+        </table>
+
+</td>
+</tr>
+</table>
+<br />
+<table border="0">
+    <tr><td>
+        <input type="text" id="chat_name" size="10" placeholder="Your name">
+        <input type="text" id="chat" size="50" placeholder="Your message">
         <input type="button" id="send_message" value="Send"><br />
         <p id="chatmessage"></p>
+        </td></tr>
+    </table>
+</center>
     </body>
 </html>
