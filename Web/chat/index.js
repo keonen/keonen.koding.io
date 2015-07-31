@@ -7,6 +7,11 @@ app.get('/', function(req, res){
     res.sendfile('index.html');
 });
 
+app.get('/images/background.jpg', function(req, res){
+   
+    res.sendfile('images/background.jpg');
+});
+
 // Wait connection
 io.on('connection', function(socket){
    
